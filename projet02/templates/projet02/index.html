@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le nombre mystère</title>
+    <link rel="stylesheet" href="{% static 'css/projet02/style.css' %}">
+    <script>
+        const csrfToken = '{{ csrf_token }}';
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Les messages apparaîtront ici -->
+            <div class="chat-message bot">
+               <div class="flex-center">
+    <span>*** Le jeu du nombre mystère ***</span>
+</div>
+
+
+                Devinez le nombre mystère entre 0 et 100 (vous avez 5 essais)
+            </div>
+        </div>
+        <input type="text" id="user-input" placeholder="Entrez un nombre entre 0 et 100..." onkeypress="checkEnter(event)">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+    <script src="{% static 'js/projet02/script.js' %}"></script>
+</body>
+</html>
